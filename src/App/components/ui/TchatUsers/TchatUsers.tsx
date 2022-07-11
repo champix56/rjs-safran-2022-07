@@ -8,9 +8,7 @@ import style from "./TchatUsers.module.css";
 export interface ITchatUsersProps {
   users:Array<IUser>
 }
-/**
- * etat initial des props du composant TchatUsers
- */
+
 const TchatUsers: React.FC<ITchatUsersProps> = (props) => {
   return (
     <div className={style.TchatUsers} data-testid="TchatUsers">

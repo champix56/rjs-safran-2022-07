@@ -17,10 +17,9 @@ const TchatMessage: React.FC<ITchatMessageProps> = (props) => {
     <div className={style.TchatMessage} data-testid="TchatMessage">
       <div className={style.header}>
         <AvatarUser user={props.user} />
-        <br/>
-        <span style={{ fontStyle: "italic" }}>
+        <div style={{ fontStyle: "italic", marginTop:'8px' }}>
           <Moment format="YYYY/MM/DD HH:mm:ss">{props.message.dt}</Moment>
-        </span>
+        </div>
         : </div><div className={style.textMessage}>{props.message.text}</div>
     </div>
   );

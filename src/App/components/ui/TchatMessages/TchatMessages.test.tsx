@@ -5,7 +5,7 @@ import TchatMessages from './TchatMessages';
 
 describe('<TchatMessages />', () => {
   test('it should mount', () => {
-    render(<TchatMessages users={[]} />);
+    render(<TchatMessages users={[]}  messages={[]} />);
     
     const tchatMessages = screen.getByTestId('TchatMessages');
 

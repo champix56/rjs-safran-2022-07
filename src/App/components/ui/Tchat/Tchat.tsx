@@ -4,7 +4,11 @@ import FlexH from "../../layout/FlexH/FlexH";
 import FlexW from "../../layout/FlexW/FlexW";
 import TchatMessage from "../TchatMessage/TchatMessage";
 import TchatMessages from "../TchatMessages/TchatMessages";
+import TchatMessagesConnected from "../TchatMessages/TchatMessagesConnected";
 import TchatUsers from "../TchatUsers/TchatUsers";
+import TchatUsersConnected from "../TchatUsers/TchatUsersConnected";
+import TchatWriter from "../TchatWriter/TchatWriter";
+import TchatWriterConnected from "../TchatWriter/TchatWriterConnected";
 import style from "./Tchat.module.css";
 /**
  * interface du composant Tchat
@@ -40,10 +44,10 @@ class Tchat extends React.Component<ITchatProps,ITchatState> {
       <div className={style.Tchat} data-testid="Tchat">
         <FlexH>
           <FlexW>
-            <TchatMessages users={this.state.users} />
-            <TchatUsers users={this.state.users} />
+            <TchatMessagesConnected  />
+            <TchatUsersConnected  />
           </FlexW>
-          <div>Writer</div>
+          <TchatWriterConnected/>
         </FlexH>
       </div>
     );
