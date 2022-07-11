@@ -18,6 +18,7 @@ export interface ITchatMessagesProps {
 const TchatMessages: React.FC<ITchatMessagesProps> = (props) => {
   return (
     <Box className={style.TchatMessages} data-testid="TchatMessages">
+      
       <Stack spacing={2}>
       {props.messages.map((m) => {
         const currUser = props.users.find((u) => u.id === m.from);

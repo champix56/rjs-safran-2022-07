@@ -5,7 +5,7 @@ export default {
   title: "TchatWriter",
 };
 
-export const Default = () => <TchatWriter users={[]} />;
+export const Default = () => <TchatWriter users={[]} onMesageSent={()=>{}} />;
 
 Default.story = {
   name: 'default',

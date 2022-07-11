@@ -19,6 +19,7 @@ import style from "./TchatWriter.module.css";
  */
 export interface ITchatWriterProps {
   users: Array<IUser>;
+  onMesageSent:Function
 }
 /**
  * etat initial des props du composant TchatWriter
@@ -38,6 +39,7 @@ const TchatWriter: React.FC<ITchatWriterProps> = (props) => {
         onSubmit={(evt) => {
           evt.preventDefault();
           console.log("submited");
+          props.onMesageSent({...state, dt:new Date().toString()})
         }}
       >
         <FlexW>
