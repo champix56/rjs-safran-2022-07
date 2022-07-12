@@ -8,11 +8,13 @@ import {
 } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import { IUserContext, UserContext } from "../../../contexts/context";
 import IMessage from "../../../interfaces/IMessage";
 import IUser from "../../../interfaces/IUsers";
-import { add } from "../../../store/messagesSlice";
+import { sendSocketMessages } from "../../../store/socket";
 import FlexW from "../../layout/FlexW/FlexW";
+import AvatarUser from "../AvatarUser/AvatarUser";
 import style from "./TchatWriter.module.css";
 /**
  * interface du composant TchatWriter
@@ -26,24 +28,29 @@ export interface ITchatWriterProps {
  */
 const tchatWriterInitialState: IMessage = {
   text: "",
-  to: -1,
+  to: undefined,
   from: 0,
   dt: new Date(0).toString(),
 };
 const TchatWriter: React.FC<ITchatWriterProps> = (props) => {
   const [state, setstate] = useState(tchatWriterInitialState);
-
+  const user = useContext(UserContext)
+  const renderAvatarFromContext =( usrctx: IUserContext) => {
+    return <AvatarUser user={props.users.find(u=>u.id===usrctx.id)}/>
+  }
   return (
     <Box className={style.TchatWriter} data-testid="TchatWriter">
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
           console.log("submited");
-          props.onMesageSent({...state, dt:new Date().toString()})
+         props.onMesageSent({...state, dt:new Date().toString()})
         }}
       >
         <FlexW>
-          <FormControl>
+          <div>       {renderAvatarFromContext(user)}
+
+          <FormControl sx={{width:'calc(100% - 80px)'}}>
             <TextField
               id="standard-basic"
               variant="standard"
@@ -53,11 +60,12 @@ const TchatWriter: React.FC<ITchatWriterProps> = (props) => {
               onChange={(evt) => setstate({ ...state, text: evt.target.value })}
             />
           </FormControl>
+          </div>
           <FormControl>
             <Select
               id="demo-simple-select"
               className={style.userSelect}
-              value={state.to}
+              value={state.to!==undefined?state.to:-1}
               sx={{ height: 30 }}
               onChange={(evt) => {
                 setstate({
