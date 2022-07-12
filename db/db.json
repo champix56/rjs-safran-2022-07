@@ -1,10 +1,72 @@
 {
-  "users": {
-    "users": [],
-    "groups": []
-  },
-  "messages": {
-    "messages": []
-  },
+  "users": [
+    {
+      "id": 0,
+      "nick": "champix",
+      "img": "",
+      "fullName": "alex",
+      "timeLastAction": "2022-02-02T01:01:01"
+    },
+    {
+      "id": 1,
+      "nick": "boby",
+      "img": "",
+      "fullName": "baby",
+      "timeLastAction": "2022-02-02T01:01:01"
+    }
+  ],
+  "groups": [],
+  "messages": [
+    {
+      "id": 7,
+      "text": "hbgvf",
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:46:30 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 6,
+      "text": "kl,lk,",
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:44:40 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 5,
+      "text": "ok,kllknlm,",
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:44:16 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 4,
+      "text": "ertyuilllllllllllllllllllll",
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:42:15 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 3,
+      "text": "ertyui",
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:41:46 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 2,
+      "text": "tgtrfed",
+      "to": -1,
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:39:09 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "text": "Hello a tous",
+      "to": -1,
+      "from": 0,
+      "dt": "Tue Jul 12 2022 03:51:00 GMT+0200 (heure d’été d’Europe centrale)",
+      "id": 1
+    },
+    {
+      "id": 8,
+      "text": "hbgvf",
+      "from": 0,
+      "dt": "Tue Jul 12 2022 05:46:39 GMT+0200 (heure d’été d’Europe centrale)"
+    }
+  ],
   "posts": []
 }
