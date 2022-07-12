@@ -8,4 +8,4 @@ export const store = configureStore({
      
 })
 store.dispatch(getUsers())
-store.dispatch(getMessages())
+//store.dispatch(getMessages())

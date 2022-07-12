@@ -40,6 +40,12 @@ const messageSlice = createSlice({
     ) => {
       state.value.push(action.payload);
     },
+    load:(
+      state: IMessageStoreState,
+      action: { payload: Array<IMessage>; type: string }
+    ) => {
+      state.value=action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getMessages.pending, (state: IMessageStoreState) => {
@@ -72,6 +78,6 @@ const messageSlice = createSlice({
   },
 });
 
-export const { add } = messageSlice.actions;
+export const { add, load } = messageSlice.actions;
 
 export default messageSlice.reducer;

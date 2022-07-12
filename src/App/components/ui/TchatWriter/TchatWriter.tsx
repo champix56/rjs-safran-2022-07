@@ -44,7 +44,8 @@ const TchatWriter: React.FC<ITchatWriterProps> = (props) => {
         onSubmit={(evt) => {
           evt.preventDefault();
           console.log("submited");
-         props.onMesageSent({...state, dt:new Date().toString()})
+         // props.onMesageSent({...state, dt:new Date().toString()})
+         sendSocketMessages({...state, dt:new Date().toString()})
         }}
       >
         <FlexW>
